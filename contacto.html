@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>GAP | contacto</title>
+	<link rel="shortcut icon" href="img/min.PNG" type="image/x-icon" sizes="20x20">
+	<link rel="icon" type="img/min.png" href="min.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta name="author" content="Uriel Castañeda Sierra">
+	<meta name="description" content="página web GAP Construcciones & Ambientales SAS">
+	<meta name="keywords"
+		content="Emprendimiento, proyectos civiles, obras civiles, construcciones 
+			paisajismo, ambientales, ambiental, medio ambiente, obra civil, obras civiles
+			proyectos, mampostería, embellecimiento ambiental, obras de infraestructura">
+
+	<!-- para acceso desde redes sociales - fb & Whatsapp -->
+	<!-- Site Name, Title, and Description to be displayed -->
+	<meta property="og:site_name" content="GAP Construcciones & ambientales SAS">
+	<meta property="og:title" content="GAP Construcciones & ambientales SAS - Nit 901541577-7">
+	<meta property="og:description" content="Construcción de obras de ingeniería civil, actividades de paisajismo y servicios de mantenimiento conexo">
+
+	<!-- Image to display -->
+	<!-- Replace   «example.com/image01.jpg» with your own -->
+	<meta property="og:image" content="https://urielcastanedasierra.github.io/gap/img/redes.jpg">
+
+	<!-- No need to change anything here -->
+	<meta property="og:type" content="website" />
+	<meta property="og:image:type" content="image/jpeg">
+
+	<!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+
+	<!-- Website to visit when clicked in fb or WhatsApp-->
+	<meta property="og:url" content="https://urielcastanedasierra.github.io/gap/redes.html">
+
+	<!-- Hojas de estilo  y scrips -->
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <script type="text/javascript" src="js/form.js"></script>
+</head>
+
+<body>
+
+    <!-- Ir Arriba -->
+    <div class="go-top">
+        <span class="fas fa-angle-up"></span>
+    </div>
+
+	<!-- Menu de Navegacion -->
+	<header id="header">
+		<nav class="menu">
+			<div class="logo-box">
+				<a href="index.html">
+					<img src="img/log.png" style="width: 230px;" alt="GAP Construcciones & Ambientales SAS">
+				</a>
+				<span class="btn-menu"><i class="fas fa-bars"></i></span>
+			</div>
+
+			<div class="list-container">
+				<ul class="lists">
+					<li><a href="index.html" class="active">Inicio</a></li>
+					<li><a href="proyectos.html">Proyectos</a></li>
+					<li><a href="equipo.html">Nuestro Equipo</a></li>
+					<li><a href="servicios.html">Servicios</a></li>
+					<li><a href="contacto.html">Contáctenos</a></li>
+					
+					<li><a href="https://www.facebook.com/profile.php?id=61577735387590"
+							class='socialmedia__icon bx bxl-facebook-circle' target="_blank"></a></li>
+
+					<li><a href="https://www.instagram.com/_______________/?hl=es-la"
+							class='socialmedia__icon bx bxl-instagram' target="_blank"></a></li>
+
+					<li><a href="https://wa.link/0273ap/" class='socialmedia__icon bx bxl-whatsapp'
+							target="_blank"></a></li>
+				</ul>
+			</div>
+		</nav>
+
+        <!-- Imagen Header -->
+        <div class="img-header contactbg">
+            <div class="welcome">
+                <h1 class="titulo_gap">Escríbenos a cerca de tu proyecto<br>pronto nos pondremos en contacto contigo</h1>
+                <hr>
+                <p>Te invitamos a diligenciar el formulario que encontrarás a continuación<br>También puedes excribirnos a través de nuestro canal de WhatsApp</p>
+                <button id="abajo">continuar...</button>
+            </div>
+        </div>
+
+        <div class="skew-abajo"></div>
+    </header>
+
+
+
+    <!-- Footer -->
+    <main class="fcontacto">
+        <div class="skew-arriba"></div>
+        <div class="deg-fcontacto"></div>
+
+        <div class="ejeZfcontacto">
+            <div class="fcontacto-content">
+                <div class="fcontacto-title">
+                    <h2>Formulario de Contacto</h2>
+                    <hr>
+                </div>
+
+                <div class="formulario-content">
+                    <form name="contactf" id="formulario" method="get" onsubmit="return validarDatos()">
+                        <label for="user">Nombre:</label>
+                        <input type="text" id="name" name="nombre" placeholder="Ingresa tu Nombre">
+
+                        <label for="user">telefono: </label>
+                        <input type="number" id="tel" name="telefono" placeholder="Ingresa tu Número de telefono">
+
+                        <label for="email">Correo Electronico:</label>
+                        <input type="email" id="email" name="email"
+                            placeholder="Ingresa tu Correo Electrónico">
+
+                        <label for="message">Escribe tu mensaje</label>
+                        <textarea name="mensaje" id="mensaje" rows="8"
+                            placeholder="Mensaje"></textarea>
+
+                        <div class="send"><input type="submit" value="Enviar" style="background-color: #c70808; color: #fff; border-color: #c70808;width: 100px; cursor: pointer;"/></div>
+
+                        <div class="mensaje-form">
+                            <p>Escribenos un mensaje, con gusto tendras una respuesta de parte de nosotros en muy poco
+                                tiempo. También te dejamos nuestro email: <a href="https://mail.google.com/"><img
+                                        src="img/message-2.svg" alt="email" style="width: 20px; margin: 0px 10px;">
+                                    gap.construcciones1930@gmail.com
+                                </a></p>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>                                
+	</main>
+	<footer class="footer">
+		<!-- <div class="contenedor contenedor-footer">
+		 <hr class="lineaFooter">  -->	
+			<div class="footer-text">  
+					<p>&copy; GAP - 2025 | Todos los derechos reservados.</p>
+			</div> 
+		<!-- </div>  -->
+	</footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/35db202371.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
