@@ -24,7 +24,7 @@
 
 	<!-- Image to display -->
 	<!-- Replace   «example.com/image01.jpg» with your own -->
-	<meta property="og:image" content="https://urielcastanedasierra.github.io/gap1/img/redes.jpg">
+	<meta property="og:image" content="https://urielcastanedasierra.github.io/gap/img/redes.jpg">
 
 	<!-- No need to change anything here -->
 	<meta property="og:type" content="website" />
@@ -35,13 +35,19 @@
 	<meta property="og:image:height" content="300">
 
 	<!-- Website to visit when clicked in fb or WhatsApp-->
-	<meta property="og:url" content="https://urielcastanedasierra.github.io/gap1/redes.html">
+	<meta property="og:url" content="https://urielcastanedasierra.github.io/gap/redes.html">
 
 	<!-- Hojas de estilo  y scrips -->
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">	
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JavaScript externo -->
+  <script src="js/script.js"></script>
 
 </head>
 
@@ -57,7 +63,7 @@
 		<nav class="menu">
 			<div class="logo-box">
 				<a href="index.html">
-					<img src="img/log.png" style="width: 230px;" alt="GAP Construcciones & Ambientales SAS">
+					<img src="img/log.png"  alt="GAP Construcciones & Ambientales SAS">
 				</a>
 				<span class="btn-menu"><i class="fas fa-bars"></i></span>
 			</div>
@@ -87,7 +93,7 @@
 			<div class="welcome">
 				<h1 class="titulo_gap">GAP<BR>Desarollamos proyectos de infrastructura civil<BR>a la medida de tus necesidades</h1>
 				<hr>
-				<p class="slogan">Aquí te presentamos algunos ejemplos de los principales proyectos que hemos desarrollado, conoce nuestros procesos constructivos y nuestros terminados de alta calidad respetando el medio ambiente</p>
+				<p class="slogan2">Aquí te presentamos algunos ejemplos de los principales proyectos que hemos desarrollado, conoce nuestros procesos constructivos y nuestros terminados de alta calidad respetando el medio ambiente</p>
 				<button id="abajo">continuar...</button>
 
 			</div>
@@ -97,42 +103,85 @@
 	</header>
 
 
-
-
-
-    <main class="seccion contenedor">    <!-- definimos los contenidos agrupados en la etiqueta <main> -->
-
-		<section class="testimonios">
-			<div class="testimonios-title">
-				<h2 class="testimonios testimonios-title">Nuestros proyectos</h2>
+    <main>    <!-- definimos los contenidos agrupados en la etiqueta <main> -->
+		<section class="seccion1">
+			<div class="seccion1-contenido-titlulo">
+				<h2>Nuestros proyectos</h2>
 				<hr>
 			</div>
 
-			<section class="quienes-somos-container">
+			<div class="seccion1-contenido-texto">
+					<p>
+					Nuestra experiencia en el desarrollo de obras de ingeniería civil se refleja en la ejecución de proyectos 
+					que responden a las necesidades reales de nuestros clientes y de la comunidad. Desde nuestra fundación, 
+					nos hemos comprometido con la calidad, la eficiencia y la sostenibilidad en cada etapa del proceso constructivo, 
+					contribuyendo al crecimiento urbano, rural y social con soluciones funcionales y de alto impacto.
+					</p>
+					<p>
 
-                <br>
-                <figure>
-                    <img src="img/construccion_web2.png"  alt="web en construcción..."  title="Estamos construyendo un mejor futuro..." height="150">
-                </figure>        
-                <br>
-                    </section>
+			<!-- Carrusel 1 -->
+			<div id="Carrusel1"></div>
+				<script>
+				// Definición de carrusel PARA PRESENTACIÓN resumen de proyectos
 
 
-			<section class="mision-vision-container">			
+				
+				const item1 = new Carrusel({
+					id_Item: 'Carrusel1',
+					nombre: 'Desarrollamos tu proyecto a la medida !',
+					descripCarrusel: 'Te invitamos a conocer algunos de nuestros proyectos más representativos. Cada obra refleja nuestro compromiso con la excelencia técnica y el bienestar colectivo.',
+					rutaFotos: 'img',      
+					tituloFotos: `Hospital Municipal de Sopó,
+					              Construcción de Vivienda Urbana,
+								  Viviendas Campestres con Zonas Recreativas,
+								  Escenarios Deportivos para la Comunidad,
+								  Obras de Infraestructura Vial Menor,
+								  Zonas Deportivas en Espacios Rurales`,
 
-                <div class="bloque proyecto1">
-					<img src="img/home.png" width="" alt="Proyecto 1">
-					<h3>Proyecto</h3>
-					<p>.......</p>
+					fotos: 'foto_proy1.jpg,foto_proy2.jpg,foto_proy3.jpg,foto_proy4.jpg,foto_proy5.jpg,foto_proy6.jpg',
+
+					descripciones: `Construcción de sede hospitalaria con infraestructura especializada para servicios de salud.`+ 
+								   `Obra ejecutada bajo estándares normativos que beneficiando a más de 20.000 habitantes.` + 
+								   `Cumplimiento estricto de normas sanitarias y mejora directa en la atención médica` + ',' + 
+
+								   `Desarrollo de casas y apartamentos en sectores urbanos con alto aprovechamiento del espacio.` + 
+								   `Ejecución eficiente segura y orientada a resolver necesidades habitacionales.` +  
+								   `Todas entrefadas dentro de los tiempos pactados con soluciones funcionales y habitables` + ',' +
+
+								   'descripcion 3'	+ ',' +							 
+								   'descripcion 4'	+ ',' +							 
+								   'descripcion 5'	+ ',' +							 
+								   'descripcion 6'  ,
+								
+					links: 'proy1.html,proy2.html,proy3.html,proy4.html,proy5.html,proy6.html',
+					accionClick: 'link',      
+					anchoCarrusel: '800px',
+					anchoDescripcion: '100%',
+					anchoImagen: '100%',     
+					tiempo: 8000,      
+					mostrarMiniaturas: 'si',
+					mostrarNumeracion: 'si',
+					mostrarTituloFoto: 'no',
+					mostrarFlechasRotacion: 'si',
+					mostrarBorde: 'si',
+					colorBorde: 'goldenrod',
+					mostrarSombra: 'si',
+					pausarCambioAutomático: 'si',
+					espacioSeparadorIdentificadores: -5,
+					mostrarTituloCentralFoto: 'si',
+					colorBgTituloCentralFoto: 'cyan,orange,salmon',
+					colorTextoClaroTituloCentralFoto: 'greenyellow',
+					colorTextoOscuroTituloCentralFoto: 'mediumblue',
+					opacidadTituloCentralFoto: 0.6
+					});
+
+				</script>  
+				<!-- Modal para imagen ampliada -->
+				<div class="modal" id="modal">
+					<img id="modal-img" src="" alt="">
 				</div>
 
-				<div class="bloque proyecto2">
-					<img src="img/idea.png" alt="Proyecto 2">
-					<h3>Proyecto</h3>
-					<p>.........</p>
-				</div>
-
-			</section>
+		</section>
 
     </main>  <!-- Aquí termina la definición del cuerpo principal del módulo funcional -->
 

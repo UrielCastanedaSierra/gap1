@@ -1,12 +1,18 @@
 :root{
     --red:#c70808;
     --orange:#b14b02e9;
+  /*  --orange: orange;    */
     --black:#252a34;
     --blue:#08d9d6;
     --white:#eaeaea;
+    --dorado_claro: #f9cc79;    
     --title:35px;
     --text:19px;
- }
+    --carrusel_txt_titulo: #cc8400;
+    --carrusel_txt_titulo_foto: #f0a22d;
+    --carrusel_txt_titulo_des: #000000;
+    --carrusel_txt_foto_des: #333333;
+}
  
  *{
      margin:0;
@@ -185,14 +191,18 @@ h4{
      left: 0;
      width: 100%;
      height: 60px;
-     background: #fff;;
+     background: #edcb6d;;
  
      display: flex;
      justify-content: space-between;
      align-items: center;
      z-index: 9999;
  }
- .menu .logo-box{margin-left: 20px;}
+ .menu .logo-box{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
  .menu .logo-box h1 a{
      text-decoration: none;
      font-size: var(--title);
@@ -200,12 +210,24 @@ h4{
      color:var(--black);
  }
  .logo-box img {
-     width: 200;
-
+    height: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);     
  }
- .menu .list-container{margin-right: 20px;}
- .menu .list-container ul{display: flex;}
- .menu .list-container ul li {list-style: none;}
+ .menu .list-container{
+    align-items:center; /* centra verticalmente */
+    margin-right: 20px;
+}
+ .menu .list-container ul{
+    height: 100%; /* asegura que tome toda la altura del contenedor */    
+    display: flex;
+    align-items: center; /* centra verticalmente el contenido del <li> */
+}
+ .menu .list-container ul li {
+    list-style: none;
+    line-height: 0.9;
+    text-indent: -1.2em;            /* Sangrado negativo en la primera línea */
+    padding-left: 1.2em;            /* Compensa el texto hacia la derecha */    
+}
  .menu .list-container ul li a{
      text-decoration: none;
      margin: 0px 10px;
@@ -214,6 +236,8 @@ h4{
      border-radius: 24px;
      transition: 0.3s;
      font-size: 16px;
+    align-items: center; /* centra verticalmente el texto dentro del <a> */
+    height: 100%; /* asegura que <a> ocupe todo el alto disponible */     
  }
  .menu .list-container ul li a.active{
      background: var(--orange);
@@ -528,6 +552,7 @@ h4{
     max-width: 46%;
     box-sizing: border-box;
     padding: 1rem;
+    line-height: 1.5; /* interlineado */
     text-align: justify;
     background-color: #f9f9f9; /* opcional, para visual */
     border: 1px solid #ddd;    /* opcional */
@@ -539,6 +564,37 @@ h4{
     text-transform: uppercase;
     text-align: left;
     margin-bottom: 1rem;
+}
+
+.bloque p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.bloque ul {
+  padding-left: 4px; /* o ajusta a 4px si necesitas más */
+  margin: 0;
+  list-style-position: inside;
+  list-style: none;
+}
+
+
+.bloque li {
+  position: relative;
+  text-align: justify;
+  line-height: 1.2; /* interlineado */
+  margin-bottom: 10px; /* espacio entre ítems */
+  padding-left: 15px; /* sangría del texto */
+}
+
+.bloque li::before {
+  content: "•"; /* viñeta (puedes cambiar por *) */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--carrusel_txt_titulo); /* o cualquier color */
+  font-weight: bold;
 }
 
 .bloque img{
@@ -560,12 +616,24 @@ h4{
     }
 }
 
-.quienes-somos-container {
+
+
+
+.quienes-somos-seccion1 {
+    max-width: 920px;    
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 94%;
+    margin: 0 auto;
+  
     padding: 1.5rem;
+    font-family: 'Lato', sans-serif;
+
 }
+
+
 
 .quienes-img {
     max-width: 100%;
@@ -573,25 +641,191 @@ h4{
     margin-bottom: 1.5rem;
 }
 
-.quienes-somos {
-    max-width: min(66vw, 720px); /* 66% del ancho de la pantalla o 720px */
-    font-size: 1.8rem;
-    margin: 0 auto;
+
+/* Opcional: títulos alineados a la izq */
+.quienes-somos-seccion1 h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    line-height: 1;    
 }
 
-.quienes-somos p {
+.quienes-somos-contenido-texto-e-imagen-lateral {
+
+    /* max-width: min(90vw, 720px); 90% del ancho de la pantalla o 720px */
+    /* el ancho lo determina el contenedor externo */
+    font-size: 1.8rem;
+    margin: 0 auto;
+    padding: 1rem;
+    line-height: 1.6; /* interlineado */
     text-align: justify;
-    margin-bottom: 1rem;
+
+    display: flex;
+    flex: 2;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;    
+ }
+
+.quienes-somos-contenido-texto {
+    flex: 2;
+    max-width: 66%;  
+    min-width: 54%;
+  transition: all 0.3s ease;  
+  margin: 0 auto;    
+}
+
+.quienes-somos-contenido-texto p {
+    font-size: 1.1em;
+    line-height: 1.5;    
+    text-align: justify;
+    margin-bottom: 2em;  
 }
 
 .quienes-somos ul {
-    padding-left: 1.5rem; /* sangría para la lista */
+    padding-left: 1rem; /* sangría para la lista */
     margin-bottom: 1rem;
 }
 
 .quienes-somos li {
     text-align: justify;
     margin-bottom: 0.5rem;
+  line-height: 1.2; /* interlineado */
+  margin-bottom: 10px; /* espacio entre ítems */
+  padding-left: 15px; /* sangría del texto */    
+}
+
+.quienes-somos-contenedor-imagenes-flotantes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 33%;
+  min-width: 250px;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.quienes-somos-imagen-flotante {
+  flex: 1 1 32%;;
+  min-width: 250px;
+  max-width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.quienes-somos-imagen-flotante img {
+  width: 80%;
+  height: auto;
+  /*display: block; */
+   display: inline-block;  
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  transform: rotate(45deg); /* rotación permanente */
+  animation: rotarEntrada 1s ease-in-out;
+  box-shadow: 0 0 10px rgba(204, 132, 0, 0.6); /* sombra dorada suave */
+  overflow: hidden; /* para asegurar que el redondeo se aplique */
+  transition: transform 0.3s ease;
+  background-color: #fff; /* opcional: da efecto de botón blanco */
+}
+
+/* Efecto de relieve al pasar el mouse (opcional) */
+.quienes-somos-imagen-flotante img:hover {
+  transform: scale(1.2);
+}
+
+/* Animación de entrada */
+@keyframes rotarEntrada {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+
+/* Clase de rotación */
+.quienes-somos-imagen.rotada img {
+  transform: rotate(45deg);
+}
+
+/* Rotación cuando la pantalla es muy estrecha */
+/* Opcional: transición suave al reordenar */
+@media (max-width: 860px) {
+  .quienes-somos-contenido-texto-e-imagen-lateral {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quienes-somos-contenido-texto {
+    max-width: 95%;
+    min-width: 95%;
+    min-width: unset;
+  }
+
+  .quienes-somos-contenedor-imagenes-flotantes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+}
+
+/* ---------------------- NUESTROS PROYECTOS ------------ */
+
+
+.seccion1 {
+    margin-top: 120px;
+    max-width: 1100px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 94%;
+    margin: 0 auto;
+  
+    padding: 1.5rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.seccion1-contenido-texto {
+    flex: 2;
+    max-width: 98%;  
+    min-width: 54%;
+  transition: all 0.3s ease;  
+  margin: 0 auto; 
+}
+
+.seccion1-contenido-texto p {
+    font-size: 1.1em;
+    line-height: 1.5;    
+    text-align: justify;
+    margin-bottom: 2em;  
+}
+
+ .seccion1-contenido-titlulo {
+     width: 50%;
+     margin:auto;
+     text-align: center;
+ }
+
+.seccion1 h2 {
+     font-size: 30px;
+     font-weight: normal;
+     color: var(--black);
+     margin-bottom: 10px;
+}
+
+.seccion1 h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    line-height: 1;
+    font-weight: normal;    
 }
 
 
@@ -612,6 +846,7 @@ h4{
 	border:1px solid #B5B5B5;
 	background-color: #f5f5f5;
 	margin-bottom: 2rem;
+  
 }
 
 .contenido-anuncio{

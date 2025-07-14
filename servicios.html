@@ -24,7 +24,7 @@
 
 	<!-- Image to display -->
 	<!-- Replace   «example.com/image01.jpg» with your own -->
-	<meta property="og:image" content="https://urielcastanedasierra.github.io/gap1/img/redes.jpg">
+	<meta property="og:image" content="https://urielcastanedasierra.github.io/gap/img/redes.jpg">
 
 	<!-- No need to change anything here -->
 	<meta property="og:type" content="website" />
@@ -35,13 +35,20 @@
 	<meta property="og:image:height" content="300">
 
 	<!-- Website to visit when clicked in fb or WhatsApp-->
-	<meta property="og:url" content="https://urielcastanedasierra.github.io/gap1/redes.html">
+	<meta property="og:url" content="https://urielcastanedasierra.github.io/gap/redes.html">
 
 	<!-- Hojas de estilo  y scrips -->
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">	
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JavaScript externo -->
+  <script src="js/script.js"></script>
+
 
 </head>
 
@@ -57,7 +64,7 @@
 		<nav class="menu">
 			<div class="logo-box">
 				<a href="index.html">
-					<img src="img/log.png" style="width: 230px;" alt="GAP Construcciones & Ambientales SAS">
+					<img src="img/log.png" alt="GAP Construcciones & Ambientales SAS">
 				</a>
 				<span class="btn-menu"><i class="fas fa-bars"></i></span>
 			</div>
@@ -96,28 +103,43 @@
 		<div class="skew-abajo"></div>
 	</header>
 
-	<main class="seccion contenedor">
-		<section class="testimonios">
-			<div class="testimonios-title">
-				<h2 class="testimonios testimonios-title"> Todos Nuestros servicios</h2>
+    <main>    <!-- definimos los contenidos agrupados en la etiqueta <main> -->
+		<section class="seccion1">
+			<div class="seccion1-contenido-titlulo">
+				<h2>Todos Nuestros Servicios</h2>
 				<hr>
 			</div>
 
-			<div class="box-testimonio">
-				<div class="contenedor-anuncios">
+			<div class="seccion1-contenido-texto">
+					<p>
+					Nuestra empresa ofrece una solución integral en la ejecución de obras de ingeniería civil, 
+					abarcando todas las etapas del proceso constructivo. Contamos con un equipo técnico capacitado y 
+					herramientas especializadas para garantizar eficiencia, seguridad y cumplimiento en cada proyecto.
+					</p>
+					<p>
+					Prestamos servicios que van desde el diseño inicial hasta los acabados finales. Cada servicio es 
+					realizado con compromiso, profesionalismo y atención a los detalles, lo que nos permite entregar 
+					obras sostenibles, funcionales y con alto impacto positivo para nuestros clientes y sus comunidades.
+					</p>
+				</div>
+			</div>	
+		</section>	
 
-					<div class="anuncio">
-						<img src="img/construccion_web2.png" alt="Servicios GAP">
+		<!-- Primera cinta -->	
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios1"></div>
+			<script>let cintaServ1 = CrearCintaServicios("cinta_servicios1"); </script>
+			<hr class="cinta-linea">
+		</div>
 
-						<div class="contenido-anuncio">
-							<h3>Servicio GAP </h3>
-							<p>1.....</p>
+		<!--		<div class="contenedor-anuncios">   -->
 
-
-							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
-						</div>
-					</div>
-
+		<!-- Secciones de contenido para los servicios -->
+		<section id="serv_dace"><h3>Diseño Arquitectónico y Cálculo Estructural</h3>
+			<p>Desarrollamos propuestas arquitectónicas funcionales y estéticamente integradas, 
+				acompañadas de cálculos estructurales precisos que garantizan seguridad, durabilidad y 
+				cumplimiento normativo. Este servicio es el punto de partida para obras eficientes y sostenibles.</p>
+		
 					<div class="anuncio">
 						<img src="img/construccion_web2.png" alt="Servicios GAP">
 
@@ -129,6 +151,45 @@
 							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
 						</div>
 					</div>
+						
+		</section>
+
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios2"></div>
+			<script>let cintaServ2 = CrearCintaServicios("cinta_servicios2","derecha"); </script>
+			<hr class="cinta-linea">
+		</div>
+		
+		<section id="serv_topografia"><h3>Topografía</h3>
+			<p>Realizamos levantamientos topográficos detallados que permiten conocer con exactitud las condiciones 
+				del terreno. Este servicio es esencial para la planificación y ejecución precisa de proyectos civiles 
+				y urbanísticos.</p>
+
+			<div class="anuncio">
+				<img src="img/construccion_web2.png" alt="Servicios GAP">
+
+				<div class="contenido-anuncio">
+					<h3>Servicio GAP </h3>
+					<p>1.....</p>
+
+
+					<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
+				</div>
+			</div>
+						
+		</section>
+		
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios3"></div>
+			<script>let cintaServ3 = CrearCintaServicios("cinta_servicios3"); </script>
+			<hr class="cinta-linea">
+		</div>
+		
+			
+		<section id="serv_cimentacion"><h3>Cimentación</h3>
+			<p>Diseñamos y ejecutamos cimentaciones seguras y adaptadas a las condiciones del suelo, garantizando 
+				estabilidad estructural a corto y largo plazo. Aplicamos métodos adecuados según el tipo de obra y 
+				carga proyectada.</p>
 
 					<div class="anuncio">
 						<img src="img/construccion_web2.png" alt="Servicios GAP">
@@ -141,6 +202,20 @@
 							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
 						</div>
 					</div>
+						
+		</section>
+
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios4"></div>
+			<script>let cintaServ4 = CrearCintaServicios("cinta_servicios4","derecha"); </script>
+			<hr class="cinta-linea">
+		</div>
+	
+
+		<section id="serv_mamposteria"><h3>Mampostería</h3>
+			<p>Ofrecemos soluciones de mampostería resistentes, funcionales y con acabados limpios, 
+				cumpliendo altos estándares técnicos. Nuestro equipo garantiza eficiencia constructiva 
+				y armonía en la obra.</p>
 
 					<div class="anuncio">
 						<img src="img/construccion_web2.png" alt="Servicios GAP">
@@ -153,7 +228,21 @@
 							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
 						</div>
 					</div>
+						
+		</section>
 
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios5"></div>
+			<script>let cintaServ5 = CrearCintaServicios("cinta_servicios5","derecha"); </script>
+			<hr class="cinta-linea">
+		</div>
+		
+
+		<section id="serv_enchapes"><h3>Enchapes</h3>
+			<p>Aplicamos enchapes en pisos, paredes y superficies con precisión técnica y enfoque estético, 
+				utilizando materiales de calidad. Este servicio aporta valor visual, durabilidad y facilidad 
+				de mantenimiento a los espacios.</p>
+ 
 					<div class="anuncio">
 						<img src="img/construccion_web2.png" alt="Servicios GAP">
 
@@ -165,6 +254,20 @@
 							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
 						</div>
 					</div>
+						
+		</section>
+
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios6"></div>
+			<script>let cintaServ6 = CrearCintaServicios("cinta_servicios6"); </script>
+			<hr class="cinta-linea">
+		</div>
+		
+
+		<section id="serv_electricidad"><h3>Electricidad</h3>
+			<p>NDiseñamos e instalamos sistemas eléctricos seguros y eficientes, cumpliendo normativas técnicas y 
+				garantizando la funcionalidad total de la obra. Ofrecemos soluciones para edificaciones residenciales, 
+				institucionales y comerciales.</p> 
 
 					<div class="anuncio">
 						<img src="img/construccion_web2.png" alt="Servicios GAP">
@@ -177,9 +280,93 @@
 							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
 						</div>
 					</div>
+		</setion>
 
-				</div>
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios7"></div>
+			<script>let cintaServ7 = CrearCintaServicios("cinta_servicios7","derecha"); </script>
+			<hr class="cinta-linea">
+		</div>
+		
+
+		<section id="serv_terminados"><h3>Terminados de obra</h3>
+			<p>Cuidamos cada detalle en los acabados finales, garantizando estética, funcionalidad y 
+				satisfacción del cliente. Nuestros terminados reflejan la calidad integral del proceso constructivo.</p>
+
+					<div class="anuncio">
+						<img src="img/construccion_web2.png" alt="Servicios GAP">
+
+						<div class="contenido-anuncio">
+							<h3>Servicio GAP</h3>
+							<p>5.....</p>
+
+
+							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
+						</div>
+					</div>
+					<br>
+					<script> let CintaServ10 = CrearCintaServicios("cinta_servicios10"); </script>
+
 		</section>
+
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios8"></div>
+			<script>let cintaServ8 = CrearCintaServicios("cinta_servicios8"); </script>
+			<hr class="cinta-linea">
+		</div>
+				
+		
+		<section id="serv_paisajismo"><h3>Paisajismo</h3>
+			<p>Integramos naturaleza y diseño en espacios exteriores, mediante jardines, senderos y elementos 
+				decorativos. Este servicio mejora la habitabilidad, el confort visual y la armonía con el entorno.</p>
+
+					<div class="anuncio">
+						<img src="img/construccion_web2.png" alt="Servicios GAP">
+
+						<div class="contenido-anuncio">
+							<h3>Servicio GAP</h3>
+							<p>5.....</p>
+
+
+							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
+						</div>
+					</div>
+						
+		</section>
+		
+		
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios9"></div>
+			<script>let cintaServ9 = CrearCintaServicios("cinta_servicios9","derecha"); </script>
+			<hr class="cinta-linea">
+		</div>		
+			
+	
+		<section id="serv_urbanismo"><h3>Urbanismo</h3>
+			<p>Ejecutamos intervenciones urbanísticas que contribuyen al ordenamiento del espacio, 
+				conectividad y bienestar colectivo. Nuestro enfoque combina funcionalidad, sostenibilidad 
+				y desarrollo territorial.</p>
+
+					<div class="anuncio">
+						<img src="img/construccion_web2.png" alt="Servicios GAP">
+
+						<div class="contenido-anuncio">
+							<h3>Servicio GAP</h3>
+							<p>5.....</p>
+
+
+							<a href="servicio1.html" class="boton boton-amarillo d-block ">Más información...</a>
+						</div>
+					</div>
+		</section>
+
+		<div class="cinta-servicios">  
+		<div id="cinta_servicios10"></div>
+			<script>let cintaServ10 = CrearCintaServicios("cinta_servicios10"); </script>
+			<hr class="cinta-linea">
+		</div>
+
+
     </main>  <!-- Aquí termina la definición del cuerpo principal del módulo funcional -->
 
 	<footer class="footer">

@@ -94,3 +94,115 @@ abajo.addEventListener('click', () => {
   
 });
 
+//  === FUNCIONES PARA MANEJO DEL CARRUCEL
+class Carrusel1 {
+  constructor({ id_Item, nombre, descrip_carrusel, titulo_fotos, fotos, descripciones }, contenedorId, tiempo = 8000) {
+    this.id = id_Item;
+    this.nombre = nombre;
+    this.descripcionCarrusel = descrip_carrusel;
+    this.titulos = titulo_fotos.split(',');
+    this.fotos = fotos.split(',');
+    this.descripciones = descripciones.split(',');
+    this.index = 0;
+    this.tiempo = tiempo;
+    this.timer = null;
+    this.render(contenedorId);
+  }
+
+  render(contenedorId) {
+    const contenedor = document.createElement('div');
+    const wrapper = document.getElementById(contenedorId);
+
+    const tituloHtml = `<div class="carrusel-titulo">${this.nombre}</div>`;
+    const descripcionHtml = `<div class="descripcion-carrusel">${this.descripcionCarrusel}</div>`;
+
+    wrapper.insertAdjacentHTML('beforeend', tituloHtml + descripcionHtml);
+
+    contenedor.className = 'carrusel-container';
+    contenedor.innerHTML = `
+      <div class="carrusel-imagen">
+        <span class="flecha izq">&#10094;</span>
+        <img src="./audiovisual/proy_${this.id}/${this.fotos[0].trim()}" alt="imagen">
+        <span class="flecha der">&#10095;</span>
+        <div class="titulo-foto">${this.titulos[0]}</div>
+      </div>
+      <div class="descripcion-foto">${this.descripciones[0]}</div>
+      <div class="miniaturas">
+        ${this.fotos.map((f, i) => `<img src="./audiovisual/proy_${this.id}/${f.trim()}" data-index="${i}" alt="miniatura">`).join('')}
+      </div>
+    `;
+
+    wrapper.appendChild(contenedor);
+
+    this.img = contenedor.querySelector('img');
+    this.titulo = contenedor.querySelector('.titulo-foto');
+    this.descripcion = contenedor.querySelector('.descripcion-foto');
+    this.miniaturas = contenedor.querySelectorAll('.miniaturas img');
+
+    contenedor.querySelector('.flecha.izq').onclick = () => this.cambiar(-1);
+    contenedor.querySelector('.flecha.der').onclick = () => this.cambiar(1);
+
+    this.miniaturas.forEach(img => {
+      img.addEventListener('click', e => {
+        this.index = parseInt(e.target.dataset.index);
+        this.actualizar();
+      });
+    });
+
+    this.img.addEventListener('click', () => this.abrirModal());
+
+    this.autoSlide();
+  }
+
+  cambiar(delta) {
+    this.index = (this.index + delta + this.fotos.length) % this.fotos.length;
+    this.actualizar();
+  }
+
+  actualizar() {
+    this.img.src = `./audiovisual/proy_${this.id}/${this.fotos[this.index].trim()}`;
+    this.titulo.textContent = this.titulos[this.index].trim();
+    this.descripcion.textContent = this.descripciones[this.index].trim();
+    this.miniaturas.forEach((img, i) => img.classList.toggle('active', i === this.index));
+  }
+
+  autoSlide() {
+    this.timer = setInterval(() => {
+      this.cambiar(1);
+    }, this.tiempo);
+  }
+
+  abrirModal() {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modal.style.display = 'flex';
+    modalImg.src = this.img.src;
+    document.body.style.overflow = 'hidden';
+
+    modal.onclick = () => {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  }
+}
+// Ejemplo de uso:
+// new Carrusel1(configuracionObjeto, intervaloMilisegundos, contenedorDOM);
+
+
+// Función para actualizar el tamaño de imagenesrotadas
+
+function ajustarRotacion() {
+    const contenedor = document.getElementById('bloque-valores');
+    const imagen = document.getElementById('quienes-somos-imagen');
+    const anchoContenedor = contenedor.offsetWidth;
+    
+    // Cuando el ancho total sea menor a 800px, rotar la imagen
+    if (anchoContenedor < 800) {
+      imagen.classList.add('rotada');
+    } else {
+      imagen.classList.remove('rotada');
+    }
+}
+
+  window.addEventListener('load', ajustarRotacion);
+  window.addEventListener('resize', ajustarRotacion);
